@@ -17,6 +17,11 @@ const cartItemSchema = mongoose.Schema(
 
 // Skema untuk Order
 const orderSchema = new mongoose.Schema({
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: true,
+  },
   origin: {
     type: String,
     required: true,

@@ -13,6 +13,7 @@ import cartRoutes from "./route/cartRoute.js";
 import couponRoutes from "./route/coupunRoutes.js";
 import ongkirController from "./controller/ongkirController.js";
 import orderRoutes from "./route/orderRoute.js";
+import paymentRoutes from "./route/paymentRoute.js";
 
 dotenv.config();
 connectDB();
@@ -65,6 +66,9 @@ app.get("/api/ongkir/cities/:provinceId", ongkirController.getCitiesByProvince);
 
 // Route for order
 app.use("/api/order", orderRoutes);
+
+// Route for payment
+app.use("/api/payment", paymentRoutes);
 
 const PORT = process.env.PORT || 5000;
 
